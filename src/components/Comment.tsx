@@ -1,11 +1,10 @@
 import { Trash } from 'phosphor-react'
 import styles from './Comment.module.css'
-import { v4 as uuidv4 } from 'uuid';
 
 interface CommentProps {
     content: string;
     onDeleteComment:(comment : string) => void;
-    key: string;
+    key: string
 }
 
 export function Comment({key, content, onDeleteComment} : CommentProps){
@@ -15,16 +14,16 @@ export function Comment({key, content, onDeleteComment} : CommentProps){
     }
 
     return (
-        <div className={styles.caixa}>
-            <div className={styles.radio}>
-                <input type="radio" size={20}/>
+        <main className={styles.caixa} key={key}>
+            <div className={styles.check}>
+                <input type="checkbox" size={20} id='checkedbox'/>
             </div>
-            <div className={styles.conteudo}>
+            <label className={styles.conteudo}>
                 {content}
-            </div>
+            </label>
             <button onClick={handleDeleteComment} className={styles.deletar}>
                 <Trash size={20}/>
             </button>
-        </div>
+        </main>
     )
 }

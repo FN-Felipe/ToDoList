@@ -1,11 +1,11 @@
 import { Header } from './components/Header'
-//import { Post } from './components/Post'
 import './global.css'
 import styles from './App.module.css'
-import { ClipboardText, PlusCircle } from 'phosphor-react'
+import {PlusCircle } from 'phosphor-react'
 import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react'
 import { Comment } from './components/Comment'
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid'
+import { Vazio } from './components/Vazio'
 
 export function App() {
   
@@ -17,6 +17,7 @@ export function App() {
 
         setComments([...comments, newCommentText]);
         setNewCommentText('')
+        uuidv4()
     }
 
     function handleNewCommentChange(event : ChangeEvent<HTMLTextAreaElement>){
@@ -34,22 +35,23 @@ export function App() {
         })
         setComments(commentsWithoutDeleteOne);
     }
-  
-  
+
+    const isNewCommentEmpty = newCommentText.length === 0
+    
   return (
     <div>
       <Header/>
       <div className={styles.altura}>
-        <form className={styles.commentForm}
-              >
+        <form className={styles.commentForm}>
           <textarea 
             className={styles.textarea}
+            value={newCommentText}
             placeholder='Digite sua tarefa'
             onChange={handleNewCommentChange}
             onInvalid={handleNewCommentInvaled}
             required
           />
-          <button onClick={handleCreateNewComment}>
+          <button onClick={handleCreateNewComment} disabled={isNewCommentEmpty}>
             Criar
             <PlusCircle 
               size={20} 
@@ -67,7 +69,7 @@ export function App() {
             <div className={styles.contador}><p>0</p></div>
           </div>
           <div className={styles.divisao}></div>
-          
+
           {comments.map(comment => {
             return (
               <Comment 
@@ -78,14 +80,7 @@ export function App() {
             )
           })}
           
-          <div className={styles.vazio}>
-            <ClipboardText size={80}/>
-            <div className={styles.pcor}>
-            <p><strong>Você ainda não tem tarefas cadastradas</strong></p>
-            <p>Crie tarefas e organize seus itens a fazer</p>
-          </div>
-
-          </div>
+          
         </main>
       </div>
     </div>
