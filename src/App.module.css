@@ -1,0 +1,114 @@
+.wrapper{
+    grid-template-columns: 46rem 10fr;
+    padding: 4rem 15rem;
+    display: flex;
+    justify-content: center;
+}
+
+.tarefas {
+    color: #4EA8DE;
+    font-size: 1rem;
+    flex-direction: row;
+    initial-letter: initial;
+    white-space: nowrap;
+}
+
+.concluida {
+    color: #8284FA;
+    font-size: 1rem;
+    margin-left: 42rem;
+    flex-direction: row;
+}
+
+.commentForm {
+    margin-top: -1.7rem;
+    grid-template-columns: 46rem 1fr;
+    height: 2rem;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+.commentForm textarea {
+    border-radius: 8px;
+    width: 40rem;
+    height: 1.5rem;
+    padding: 0.75rem;
+    display: flex;
+    resize: none;
+    color: #F2F2F2;
+    font-family: Arial, sans-serif;
+    border: 1.5px solid #0D0D0D;
+    background-color: #262626;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.divisao {
+    margin-top: 1.5rem;
+}
+
+.altura {
+    margin-top: -1.2rem;
+}
+
+.espaco {
+    display: flex;
+    justify-content: space-between;
+}
+
+.commentForm > button {
+    margin-left: 0.5rem;
+    border-radius: 8px;
+    border: 0px;
+    padding: 1.5rem;
+    background-color: #1E6F9F;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    font-style: bold;
+    font-size: 1.1rem;
+}
+
+.commentForm PlusCircle {
+    color: white;
+    flex-direction: row;
+}
+
+.vazio {
+    color: #262626;
+    padding: 5rem;
+    text-align: center;;
+}
+
+.pcor {
+    color: #808080;
+    font-family: 'Inter', sans-serif;
+}
+
+.contador {
+    background-color: #333333;
+    padding: 0.05rem 0.4rem;
+    border-radius: 8px;
+    margin-left: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    html{
+        font-size: 87.5%;
+    }
+    .wrapper{
+        grid-template-columns: 1fr;
+    }
+}

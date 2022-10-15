@@ -1,0 +1,43 @@
+.caixa{
+    background-color: #262626;
+    border-radius: 8px;
+    border: 1px solid #333333;
+    height: 3.5rem;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+
+.radio{
+    display: inline-block;
+    padding: 1rem;
+    color: #4EA8DE;
+    size: 2rem;
+}
+
+.conteudo{
+    display: inline-block;
+    padding: 1rem;
+    width: 47rem;
+    font-size: 1rem;
+    font-family: 'Arial', sans-serif;
+    color: #F2F2F2;
+    justify-content: center;
+}
+
+.deletar{
+    display: inline-block;
+    padding: 1rem 0 0 2.5rem;
+    color: #808080;
+    background-color: transparent;
+    border: none;
+    justify-content: center;
+}
+
+.deletar :hover{
+    display: inline-block;
+    color: #703e3e;
+}
+
